@@ -1,7 +1,8 @@
 import React from "react";
-import styles from "./Main.module.css";
+import styles from "./Home.module.css";
+import { Link } from "react-router-dom";
 
-export default function Main() {
+export default function Home() {
   return (
     <div>
       <section className={styles.container}>
@@ -12,7 +13,7 @@ export default function Main() {
           Add adventure to your life by joining the #vanlife movement. Rent the
           perfect van to make your perfect road trip.
         </p>
-        <button>Find your van</button>
+        <Link className={styles.buttonLarge}>Find your van</Link>
       </section>
     </div>
   );

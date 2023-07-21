@@ -1,16 +1,23 @@
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styles from "./App.module.css";
-import Header from "./components/Header/Header";
-import Main from "./components/Main/Main";
-import Footer from "./components/Footer/Footer";
+import Header from "./components/Pages/Header/Header";
+import Home from "./components/Pages/Home/Home";
+import About from "./components/Pages/About/About";
+import Footer from "./components/Pages/Footer/Footer";
 
 function App() {
   return (
-    <div className={styles.container}>
-      <Header />
-      <Main />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className={styles.container}>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 
