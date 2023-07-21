@@ -1,0 +1,16 @@
+.container {
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: Inter, sans-serif;
+  background-color: #252525;
+}
+
+.copyright {
+  color: #aaa;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22.923px;
+}
