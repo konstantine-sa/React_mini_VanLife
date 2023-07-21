@@ -1,0 +1,135 @@
+.container {
+  display: flex;
+  flex-direction: column; /* Use flexbox to center its children */
+  justify-content: center; /* Horizontally center the vansItemsContainer */
+  align-items: center; /* Vertically center the vansItemsContainer */
+  padding: 0 26px;
+  min-height: 55vh;
+  background: #fff7ed;
+  font-family: Inter;
+  text-align: center;
+  color: #161616;
+}
+
+.title {
+  align-self: flex-start;
+  margin-top: 50px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38px;
+}
+
+.filterContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 5fr;
+  align-items: center;
+
+  gap: 20px;
+  width: 100%;
+  margin-top: 22px;
+}
+
+.filterItem {
+  width: 104px;
+  height: 37px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 5px;
+  background: #ffead0;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #4d4d4d;
+  cursor: pointer;
+}
+
+.filterClear {
+  justify-self: end;
+  color: #4d4d4d;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-decoration-line: underline;
+  cursor: pointer;
+}
+
+.vansItemsContainer {
+  width: 100%;
+  margin-top: 55px;
+  margin-bottom: 83px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  row-gap: 30px;
+}
+
+/* =============================================MEDIA QUERY 530px */
+@media only screen and (max-width: 530px) {
+  .title {
+    font-size: 18px;
+    margin: 8px 12px 0 12px;
+  }
+
+  .filterItem {
+    width: 70px;
+    height: 28px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .filterClear {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+/* =============================================MEDIA QUERY 800px */
+@media only screen and (max-width: 800px) {
+  .vansItemsContainer {
+    margin-top: 55px;
+    margin-bottom: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* =============================================MEDIA QUERY 530px */
+@media only screen and (max-width: 530px) {
+  .vansItemsContainer {
+    margin-top: 55px;
+    margin-bottom: 60px;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =============================================MEDIA QUERY 350px */
+@media only screen and (max-width: 350px) {
+  .container {
+    padding: 5px;
+  }
+
+  .filterContainer {
+    gap: 10px;
+  }
+
+  .title {
+    font-size: 18px;
+    margin: 8px 12px 0 12px;
+  }
+
+  .filterItem {
+    width: 55px;
+    height: 22px;
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+  .filterClear {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}

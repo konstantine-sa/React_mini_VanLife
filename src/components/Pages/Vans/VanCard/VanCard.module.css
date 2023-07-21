@@ -1,0 +1,48 @@
+.item {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  width: 230px;
+}
+
+.itemImage {
+  grid-column: 1 / 3;
+  width: 230px;
+  height: 230px;
+  border-radius: 5px;
+  background-image: url("../../../../assets/van_one.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.itemTitle {
+  align-self: center;
+  justify-self: start;
+  color: #161616;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.itemPrice {
+  display: grid;
+  margin-top: 10px;
+  color: #161616;
+  text-align: right;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 31px;
+}
+
+span {
+  align-self: flex-start;
+  margin-top: -12px;
+  font-size: 14px;
+}
+
+.vanCategoryButton {
+  margin-top: 5px;
+  width: 85px;
+  height: 34px;
+  border: none;
+  border-radius: 5px;
+  background: #e17654;
+}
