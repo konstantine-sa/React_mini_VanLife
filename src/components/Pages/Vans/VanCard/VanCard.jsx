@@ -1,6 +1,7 @@
 import styles from "./VanCard.module.css";
+import VanCategoryButton from "../../../Buttons/VanCategoryButton/VanCategoryButton";
 
-export default function VanCard() {
+export default function VanCard(props) {
   return (
     <div className={styles.item}>
       <div className={styles.itemImage}></div>
@@ -10,7 +11,7 @@ export default function VanCard() {
         <br />
         <span>/day</span>
       </p>
-      <button className={styles.vanCategoryButton}>Simple</button>
+      <VanCategoryButton category={props.category} />
     </div>
   );
 }

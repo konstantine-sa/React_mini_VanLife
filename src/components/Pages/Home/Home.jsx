@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Home.module.css";
-import { Link } from "react-router-dom";
+import ButtonLarge from "../../Buttons/ButtonLarge/ButtonLarge";
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
           Add adventure to your life by joining the #vanlife movement. Rent the
           perfect van to make your perfect road trip.
         </p>
-        <Link className={styles.buttonLarge}>Find your van</Link>
+        <ButtonLarge buttonName="Find your van" />
       </section>
     </div>
   );

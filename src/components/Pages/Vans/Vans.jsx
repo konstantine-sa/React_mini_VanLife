@@ -15,8 +15,8 @@ export default function Vans() {
           <p className={styles.filterClear}>Clear filters</p>
         </div>
         <div className={styles.vansItemsContainer}>
-          <VanCard />
-          <VanCard />
+          <VanCard category="luxury" />
+          <VanCard category="rugged" />
           <VanCard />
           <VanCard />
           <VanCard />
