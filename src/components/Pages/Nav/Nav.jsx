@@ -8,11 +8,11 @@ export default function Nav() {
         <Link to="/" className={styles.navItem}>
           Home
         </Link>
-        <Link to="/about" className={styles.navItem}>
-          About
-        </Link>
         <Link to="/vans" className={styles.navItem}>
           Vans
+        </Link>
+        <Link to="/about" className={styles.navItem}>
+          About
         </Link>
       </nav>
     </div>

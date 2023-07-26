@@ -1,17 +1,23 @@
+import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./VanCard.module.css";
 import VanCategoryButton from "../../../Buttons/VanCategoryButton/VanCategoryButton";
 
 export default function VanCard(props) {
+  console.log(props.vanData);
+
   return (
     <div className={styles.item}>
-      <div className={styles.itemImage}></div>
-      <p className={styles.itemTitle}>Modest Explorer</p>
-      <p className={styles.itemPrice}>
-        $60
-        <br />
-        <span>/day</span>
-      </p>
-      <VanCategoryButton category={props.category} />
+      <Link to={`/vans/${props.vanData.id}`}>
+        <img className={styles.itemImage} src={props.vanData.imageUrl}></img>
+        <p className={styles.itemTitle}>{props.vanData.name}</p>
+        <p className={styles.itemPrice}>
+          ${props.vanData.price}
+          <br />
+          <span>/day</span>
+        </p>
+        <VanCategoryButton category={props.vanData.type} />
+      </Link>
     </div>
   );
 }

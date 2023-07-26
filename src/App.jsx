@@ -6,6 +6,8 @@ import Home from "./components/Pages/Home/Home";
 import About from "./components/Pages/About/About";
 import Footer from "./components/Pages/Footer/Footer";
 import Vans from "./components/Pages/Vans/Vans";
+import "./server";
+import VanDetails from "./components/Pages/Vans/VanDetails/VanDetails";
 
 function App() {
   return (
@@ -14,8 +16,9 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
           <Route path="/vans" element={<Vans />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/vans/:id" element={<VanDetails />} />
         </Routes>
         <Footer />
       </div>

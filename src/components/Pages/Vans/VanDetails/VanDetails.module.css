@@ -1,0 +1,201 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 26px;
+  min-height: 80vh;
+}
+
+.wrap {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  width: 100%;
+
+  font-family: Inter;
+  text-align: center;
+  color: #fff;
+}
+
+.backToVans {
+  display: flex;
+  justify-self: start;
+  align-items: center;
+  margin-top: 40px;
+  cursor: pointer;
+}
+
+.backToVans svg {
+  width: 12px;
+  stroke-width: 0.5px;
+  stroke: #858585;
+}
+
+.backToVans p {
+  grid-row: 1 / 2;
+  margin-left: 11px;
+  color: #201f1d;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 23px;
+  text-decoration-line: underline;
+}
+
+.itemImage {
+  margin-top: 40px;
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+  justify-self: center;
+
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+}
+
+.wrap button {
+  margin-top: 50px;
+  grid-row: 3 / 4;
+  grid-column: 2 / 3;
+}
+
+.itemTitle {
+  grid-row: 4 / 5;
+  grid-column: 2 / 3;
+  align-self: center;
+  justify-self: start;
+  margin-top: 20px;
+  color: #161616;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.itemPrice {
+  grid-row: 5 / 6;
+  grid-column: 2 / 3;
+  justify-self: start;
+  margin-top: 10px;
+  color: #161616;
+  text-align: right;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 31px;
+}
+
+span {
+  align-self: flex-start;
+  margin-top: -12px;
+  font-size: 14px;
+}
+
+.description {
+  grid-row: 6 / 7;
+  grid-column: 2 / 3;
+  margin-top: 10px;
+  color: #161616;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: justify;
+}
+
+.buttonLargeWrap {
+  grid-row: 7 / 8;
+  grid-column: 2 / 3;
+}
+
+.buttonLargeWrap :first-child {
+  display: inline-block;
+  margin-top: 40px;
+  margin-bottom: 85px;
+  width: 500px;
+}
+
+/* =============================================MEDIA QUERY 860px */
+@media only screen and (max-width: 860px) {
+  .itemImage {
+    width: 400px;
+  }
+
+  .buttonLargeWrap :first-child {
+    width: 400px;
+  }
+}
+
+/* =============================================MEDIA QUERY 740px */
+@media only screen and (max-width: 740px) {
+  .itemImage {
+    margin-top: 20px;
+  }
+  .backToVans p {
+    margin-left: 8px;
+    font-size: 12px;
+  }
+
+  .wrap button {
+    margin-top: 30px;
+  }
+
+  .buttonLargeWrap :first-child {
+    margin-top: 20px;
+    margin-bottom: 65px;
+    width: 300px;
+  }
+}
+
+/* =============================================MEDIA QUERY 670px */
+@media only screen and (max-width: 670px) {
+  .backToVans {
+    grid-column: 2 / 3;
+    margin-top: 10px;
+  }
+
+  .itemImage {
+    margin-top: 20px;
+  }
+
+  .wrap button {
+    margin-top: 20px;
+  }
+
+  .buttonLargeWrap :first-child {
+    width: 100%;
+  }
+}
+
+/* =============================================MEDIA QUERY 490px */
+@media only screen and (max-width: 490px) {
+  .wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .itemImage {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .wrap button {
+    margin-top: 20px;
+    width: 20%;
+    font-size: 11px;
+  }
+
+  .itemTitle {
+    margin-top: 20px;
+    font-size: 24px;
+  }
+
+  .itemPrice {
+    margin-top: 10px;
+    font-size: 20px;
+    line-height: 31px;
+  }
+
+  .description {
+    font-size: 12px;
+  }
+
+  .buttonLargeWrap :first-child {
+    width: 100%;
+  }
+}
