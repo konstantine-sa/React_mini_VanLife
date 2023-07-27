@@ -1,22 +1,42 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import styles from "./Nav.module.css";
 
 export default function Nav(props) {
   return (
     <div>
       <nav className={styles.navBar}>
-        <Link to="/" className={styles.navItem}>
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive ? styles.active : styles.navItem
+          }
+        >
           Home
-        </Link>
-        <Link to="/host" className={styles.navItem}>
+        </NavLink>
+        <NavLink
+          to="/host"
+          className={({ isActive }) =>
+            isActive ? styles.active : styles.navItem
+          }
+        >
           Host
-        </Link>
-        <Link to="/vans" className={styles.navItem}>
+        </NavLink>
+        <NavLink
+          to="/vans"
+          className={({ isActive }) =>
+            isActive ? styles.active : styles.navItem
+          }
+        >
           Vans
-        </Link>
-        <Link to="/about" className={styles.navItem}>
+        </NavLink>
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            isActive ? styles.active : styles.navItem
+          }
+        >
           About
-        </Link>
+        </NavLink>
       </nav>
     </div>
   );

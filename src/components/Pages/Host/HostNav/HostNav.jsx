@@ -1,22 +1,42 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import styles from "./HostNav.module.css";
 
 export default function HostNav(props) {
   return (
     <div>
       <nav className={styles.navBar}>
-        <Link to="/host" className={styles.navItem}>
+        <NavLink
+          to="/host/dashboard"
+          className={({ isActive }) =>
+            isActive ? styles.active : styles.navItem
+          }
+        >
           Dashboard
-        </Link>
-        <Link to="/host/income" className={styles.navItem}>
+        </NavLink>
+        <NavLink
+          to="/host/income"
+          className={({ isActive }) =>
+            isActive ? styles.active : styles.navItem
+          }
+        >
           Income
-        </Link>
-        <Link to="/host/vans" className={styles.navItem}>
+        </NavLink>
+        <NavLink
+          to="/host/vans"
+          className={({ isActive }) =>
+            isActive ? styles.active : styles.navItem
+          }
+        >
           Vans
-        </Link>
-        <Link to="/host/reviews" className={styles.navItem}>
+        </NavLink>
+        <NavLink
+          to="/host/reviews"
+          className={({ isActive }) =>
+            isActive ? styles.active : styles.navItem
+          }
+        >
           Reviews
-        </Link>
+        </NavLink>
       </nav>
     </div>
   );

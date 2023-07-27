@@ -2,7 +2,8 @@
   display: flex;
 }
 
-.navItem {
+.navItem,
+.active {
   color: #4d4d4d;
   text-align: right;
   font-size: 16px;
@@ -11,14 +12,22 @@
   cursor: pointer;
 }
 
-.navItem:not(:first-child) {
+.navItem:not(:first-child),
+.active:not(:first-child) {
   margin-left: 13px;
 }
 
 .navItem:hover {
   text-decoration: underline 2px;
   text-underline-offset: 4px;
-  color: #707070;
+  color: #161616;
+}
+
+.active {
+  color: #161616;
+  font-weight: bold;
+  text-decoration: underline 2px;
+  text-underline-offset: 4px;
 }
 
 /* =============================================MEDIA QUERY 450px */
