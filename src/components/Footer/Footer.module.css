@@ -16,10 +16,6 @@
   line-height: 22.923px;
 }
 
-.navFooter {
-  border: 1px solid red;
-}
-
 /* =============================================MEDIA QUERY 450px */
 @media only screen and (max-width: 450px) {
   .container {
