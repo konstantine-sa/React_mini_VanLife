@@ -6,7 +6,8 @@ export default function HostNav(props) {
     <div>
       <nav className={styles.navBar}>
         <NavLink
-          to="/host/dashboard"
+          to="/host"
+          end
           className={({ isActive }) =>
             isActive ? styles.active : styles.navItem
           }
