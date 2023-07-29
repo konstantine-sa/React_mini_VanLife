@@ -1,0 +1,55 @@
+.vanContainer {
+  display: grid;
+  grid-template-columns: 1fr 8fr;
+  grid-template-rows: 1fr 1fr;
+  width: 100%;
+  height: 100px;
+  margin-top: 32px;
+  background-color: #fff;
+  border-radius: 6px;
+}
+
+.vanImage {
+  background-color: aquamarine;
+  grid-row: 1 / 3;
+  width: 65px;
+  height: 65px;
+  margin: 18px;
+  border-radius: 6px;
+}
+
+.vanTitle {
+  justify-self: start;
+  align-self: flex-end;
+  color: #161616;
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.vanPrice {
+  justify-self: start;
+  align-self: flex-start;
+  color: #4d4d4d;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+/* =============================================MEDIA QUERY 390px */
+@media only screen and (max-width: 390px) {
+  .vanContainer {
+    margin-top: 20px;
+  }
+  .vanTitle {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .vanPrice {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}

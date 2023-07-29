@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0 26px;
+  min-height: 78vh;
+  background: #fff7ed;
+  font-family: Inter;
+  text-align: center;
+  color: #161616;
+}
+
+.title {
+  align-self: flex-start;
+  margin-top: 50px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38px;
+}
+
+.loader {
+  margin: 100px auto;
+}
+
+/* =============================================MEDIA QUERY 390px */
+@media only screen and (max-width: 390px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .title {
+    margin-top: 25px;
+    font-size: 24px;
+    line-height: 24px;
+  }
+}

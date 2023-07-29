@@ -1,8 +1,8 @@
 .container {
   display: flex;
-  flex-direction: column; /* Use flexbox to center its children */
-  justify-content: center; /* Horizontally center the vansItemsContainer */
-  align-items: center; /* Vertically center the vansItemsContainer */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 0 26px;
   min-height: 55vh;
   background: #fff7ed;
@@ -66,6 +66,16 @@
   row-gap: 30px;
 }
 
+/* =============================================MEDIA QUERY 800px */
+@media only screen and (max-width: 800px) {
+  .vansItemsContainer {
+    margin-top: 55px;
+    margin-bottom: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 /* =============================================MEDIA QUERY 530px */
 @media only screen and (max-width: 530px) {
   .title {
@@ -84,20 +94,7 @@
     font-size: 12px;
     line-height: 18px;
   }
-}
 
-/* =============================================MEDIA QUERY 800px */
-@media only screen and (max-width: 800px) {
-  .vansItemsContainer {
-    margin-top: 55px;
-    margin-bottom: 60px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-/* =============================================MEDIA QUERY 530px */
-@media only screen and (max-width: 530px) {
   .vansItemsContainer {
     margin-top: 55px;
     margin-bottom: 60px;
@@ -106,8 +103,8 @@
   }
 }
 
-/* =============================================MEDIA QUERY 350px */
-@media only screen and (max-width: 350px) {
+/* =============================================MEDIA QUERY 390px */
+@media only screen and (max-width: 390px) {
   .container {
     padding: 5px;
   }
