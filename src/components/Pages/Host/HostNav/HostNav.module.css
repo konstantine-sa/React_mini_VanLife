@@ -1,5 +1,6 @@
 .navBar {
   display: flex;
+  padding: 0 26px;
 }
 
 .navItem,
@@ -14,7 +15,7 @@
 
 .navItem:not(:first-child),
 .active:not(:first-child) {
-  margin-left: 13px;
+  margin-left: 28px;
 }
 
 .navItem:hover {
@@ -32,11 +33,24 @@
 
 /* =============================================MEDIA QUERY 450px */
 @media only screen and (max-width: 450px) {
+  .navBar {
+    padding: 0 16px;
+  }
+
   .navItem {
     font-size: 12px;
   }
 
   .navItem:not(:first-child) {
-    margin-left: 8px;
+    margin-left: 12px;
+  }
+
+  .active:not(:first-child) {
+    margin-left: 12px;
+  }
+
+  .active {
+    font-size: 12px;
+    text-underline-offset: 2px;
   }
 }

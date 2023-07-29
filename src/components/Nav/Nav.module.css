@@ -39,4 +39,13 @@
   .navItem:not(:first-child) {
     margin-left: 8px;
   }
+
+  .active:not(:first-child) {
+    margin-left: 8px;
+  }
+
+  .active {
+    font-size: 12px;
+    text-underline-offset: 2px;
+  }
 }
