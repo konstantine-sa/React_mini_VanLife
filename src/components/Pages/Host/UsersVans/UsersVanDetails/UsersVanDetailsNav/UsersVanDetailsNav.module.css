@@ -24,7 +24,7 @@ nav {
 
 .active {
   color: #161616;
-  font-weight: 500;
+  font-weight: 700;
   text-decoration: underline 2px;
   text-underline-offset: 4px;
 }
@@ -36,6 +36,10 @@ nav {
   }
 
   .navItem {
+    font-size: 12px;
+  }
+
+  .active {
     font-size: 12px;
   }
 
