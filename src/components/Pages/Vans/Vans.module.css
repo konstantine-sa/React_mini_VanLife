@@ -44,6 +44,22 @@
   line-height: 24px;
   color: #4d4d4d;
   cursor: pointer;
+  transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.simple:hover {
+  background-color: #e17654;
+  color: #ffead0;
+}
+
+.luxury:hover {
+  background-color: #161616;
+  color: #ffead0;
+}
+
+.rugged:hover {
+  background-color: #115e59;
+  color: #ffead0;
 }
 
 .filterClear {
