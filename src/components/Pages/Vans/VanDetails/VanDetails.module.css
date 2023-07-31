@@ -38,6 +38,9 @@
   font-size: 16px;
   font-weight: 500;
   line-height: 23px;
+}
+
+.backToVans p:hover {
   text-decoration-line: underline;
 }
 

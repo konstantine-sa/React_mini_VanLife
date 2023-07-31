@@ -15,8 +15,6 @@ export default function VanDetails(props) {
       .then((data) => setVan(data.vans));
   }, [params]);
 
-  console.log(van);
-
   return (
     <div className={styles.container}>
       {van ? (

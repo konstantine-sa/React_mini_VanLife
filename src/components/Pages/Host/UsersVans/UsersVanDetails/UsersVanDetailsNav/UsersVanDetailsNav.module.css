@@ -16,6 +16,19 @@ nav {
   margin-left: 27px;
 }
 
+.navItem:hover {
+  text-decoration: underline 2px;
+  text-underline-offset: 4px;
+  color: #161616;
+}
+
+.active {
+  color: #161616;
+  font-weight: 500;
+  text-decoration: underline 2px;
+  text-underline-offset: 4px;
+}
+
 /* =============================================MEDIA QUERY 450px */
 @media only screen and (max-width: 450px) {
   nav {

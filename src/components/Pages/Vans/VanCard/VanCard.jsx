@@ -4,8 +4,6 @@ import styles from "./VanCard.module.css";
 import VanCategoryButton from "../../../Buttons/VanCategoryButton/VanCategoryButton";
 
 export default function VanCard(props) {
-  console.log(props.vanData);
-
   return (
     <div className={styles.item}>
       <Link to={`/vans/${props.vanData.id}`}>

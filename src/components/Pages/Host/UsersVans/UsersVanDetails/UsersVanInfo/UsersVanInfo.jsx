@@ -1,21 +1,25 @@
-import styles from "./UsersVanDescription.module.css";
+import React from "react";
+import { useOutletContext, useParams } from "react-router-dom";
+import styles from "./UsersVanInfo.module.css";
 
-export default function UsersVanDescription(props) {
+export default function UsersVanInfo() {
+  const van = useOutletContext();
+
   return (
     <div className={styles.descriptionContainer}>
       <p>
         <span>Name: </span>
-        {props.name}
+        {van.name}
       </p>
 
       <p>
         <span>Category: </span>
-        {props.type}
+        {van.type}
       </p>
 
       <p>
         <span>Description: </span>
-        {props.description}
+        {van.description}
       </p>
 
       <p>
