@@ -1,0 +1,33 @@
+nav {
+  grid-column: 1 / 3;
+  margin-top: 27px;
+}
+
+.navItem {
+  color: #4d4d4d;
+  font-family: Inter;
+  font-size: 16.149px;
+  font-weight: 500;
+  line-height: 20.566px;
+}
+
+.navItem:not(:first-child),
+.active:not(:first-child) {
+  margin-left: 27px;
+}
+
+/* =============================================MEDIA QUERY 450px */
+@media only screen and (max-width: 450px) {
+  nav {
+    margin-top: 18px;
+  }
+
+  .navItem {
+    font-size: 12px;
+  }
+
+  .navItem:not(:first-child),
+  .active:not(:first-child) {
+    margin-left: 8px;
+  }
+}

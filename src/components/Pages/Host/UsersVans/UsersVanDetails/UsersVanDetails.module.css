@@ -1,0 +1,130 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 26px;
+  min-height: 80vh;
+}
+
+.backToVans {
+  display: flex;
+  justify-self: start;
+  align-items: center;
+  margin-top: 40px;
+  cursor: pointer;
+}
+
+.backToVans svg {
+  width: 12px;
+  stroke-width: 0.5px;
+  stroke: #858585;
+}
+
+.backToVans p {
+  grid-row: 1 / 2;
+  margin-left: 11px;
+  color: #201f1d;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 23px;
+  text-decoration-line: underline;
+}
+
+.vanCard {
+  display: grid;
+  grid-template-columns: 183px 1fr;
+  width: 100%;
+  padding: 23px;
+  margin-top: 32px;
+  background-color: #fff;
+  border-radius: 6px;
+}
+
+.vanImage {
+  grid-row: 1 / 4;
+  grid-column: 1 / 2;
+  justify-self: flex-start;
+  margin-right: 23px;
+  width: 160px;
+  border-radius: 5px;
+  border: none;
+}
+
+.vanCard button {
+  margin-top: 23px;
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  align-self: flex-end;
+  max-width: 70px;
+}
+
+.itemTitle {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+  align-self: flex-start;
+  justify-self: start;
+  margin-top: 18px;
+  color: #161616;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.itemPrice {
+  grid-row: 3 / 4;
+  grid-column: 2 / 3;
+  justify-self: start;
+
+  color: #161616;
+  text-align: right;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 31px;
+}
+
+span {
+  align-self: flex-start;
+  margin-top: -12px;
+  font-size: 14px;
+}
+
+/* =============================================MEDIA QUERY 450px */
+@media only screen and (max-width: 450px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  .vanCard {
+    display: grid;
+    grid-template-columns: 132px 1fr;
+    width: 100%;
+    padding: 0 12px;
+    margin-top: 24px;
+    background-color: #fff;
+    border-radius: 6px;
+  }
+
+  .vanImage {
+    margin-top: 12px;
+    margin-right: 12px;
+    width: 120px;
+  }
+
+  .vanCard button {
+    margin-top: 12px;
+    max-width: 50px;
+    max-height: 25px;
+    font-size: 10px;
+  }
+
+  .itemTitle {
+    margin-top: 8px;
+    font-size: 21px;
+  }
+
+  .itemPrice {
+    font-size: 16px;
+
+    line-height: 31px;
+  }
+}

@@ -13,7 +13,7 @@ import Income from "./components/Pages/Host/Income/Income";
 import Reviews from "./components/Pages/Host/Reviews/Reviews";
 import HostLayout from "./components/Pages/Host/HostLayout";
 import UsersVans from "./components/Pages/Host/UsersVans/UsersVans";
-import UsersVanDetails from "./components/Pages/Host/UsersVanDetails/UsersVanDetails";
+import UsersVanDetails from "./components/Pages/Host/UsersVans/UsersVanDetails/UsersVanDetails";
 
 function App() {
   return (

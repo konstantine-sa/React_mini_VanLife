@@ -1,0 +1,19 @@
+.descriptionContainer {
+  grid-column: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 27px;
+}
+
+.descriptionContainer p {
+  color: #161616;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+}
+
+.descriptionContainer span {
+  font-weight: 900;
+}

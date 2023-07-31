@@ -15,7 +15,7 @@ export default function HostNav(props) {
           Dashboard
         </NavLink>
         <NavLink
-          to="/host/income"
+          to="income"
           className={({ isActive }) =>
             isActive ? styles.active : styles.navItem
           }
@@ -23,7 +23,7 @@ export default function HostNav(props) {
           Income
         </NavLink>
         <NavLink
-          to="/host/vans"
+          to="vans"
           className={({ isActive }) =>
             isActive ? styles.active : styles.navItem
           }
@@ -31,7 +31,7 @@ export default function HostNav(props) {
           Vans
         </NavLink>
         <NavLink
-          to="/host/reviews"
+          to="reviews"
           className={({ isActive }) =>
             isActive ? styles.active : styles.navItem
           }
