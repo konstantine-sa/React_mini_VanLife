@@ -39,27 +39,39 @@ export default function Vans() {
             <h1 className={styles.title}>Explore our van options</h1>
 
             <div className={styles.filterContainer}>
-              <NavLink
-                className={`${styles.filterItem} ${styles.simple}`}
-                to={"?type=simple"}
+              <button
+                className={`${styles.filterItem} ${styles.simple} ${
+                  typeFilter === "simple" ? styles.active : ""
+                }`}
+                onClick={() => setSearchParams({ type: "simple" })}
               >
                 Simple
-              </NavLink>
-              <NavLink
-                className={`${styles.filterItem} ${styles.luxury}`}
-                to={"?type=luxury"}
+              </button>
+              <button
+                className={`${styles.filterItem} ${styles.luxury} ${
+                  typeFilter === "luxury" ? styles.active : ""
+                }`}
+                onClick={() => setSearchParams({ type: "luxury" })}
               >
                 Luxury
-              </NavLink>
-              <Link
-                className={`${styles.filterItem} ${styles.rugged}`}
-                to={"?type=rugged"}
+              </button>
+              <button
+                className={`${styles.filterItem} ${styles.rugged} ${
+                  typeFilter === "rugged" ? styles.active : ""
+                }`}
+                onClick={() => setSearchParams({ type: "rugged" })}
               >
                 Rugged
-              </Link>
-              <NavLink className={styles.filterClear} to={"."}>
-                Clear filters
-              </NavLink>
+              </button>
+
+              {typeFilter ? (
+                <NavLink
+                  className={styles.filterClear}
+                  onClick={() => setSearchParams({})}
+                >
+                  Clear filters
+                </NavLink>
+              ) : null}
             </div>
             <div className={styles.vansItemsContainer}>{vanCardsBuilder}</div>
           </>

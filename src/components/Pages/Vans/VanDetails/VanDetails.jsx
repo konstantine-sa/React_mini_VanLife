@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import styles from "./VanDetails.module.css";
 import VanCategoryButton from "../../../Buttons/VanCategoryButton/VanCategoryButton";
 import ButtonLarge from "../../../Buttons/ButtonLarge/ButtonLarge";
@@ -19,7 +19,7 @@ export default function VanDetails(props) {
     <div className={styles.container}>
       {van ? (
         <div className={styles.wrap}>
-          <div className={styles.backToVans}>
+          <Link to={".."} relative="path" className={styles.backToVans}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="14"
@@ -33,7 +33,7 @@ export default function VanDetails(props) {
               />
             </svg>
             <p>Back to all vans</p>
-          </div>
+          </Link>
           <img className={styles.itemImage} src={van.imageUrl}></img>
           <VanCategoryButton category={van.type} />
           <p className={styles.itemTitle}>{van.name}</p>

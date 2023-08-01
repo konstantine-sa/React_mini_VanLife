@@ -47,17 +47,20 @@
   transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.simple:hover {
+.simple:hover,
+.simple.active {
   background-color: #e17654;
   color: #ffead0;
 }
 
-.luxury:hover {
+.luxury:hover,
+.luxury.active {
   background-color: #161616;
   color: #ffead0;
 }
 
-.rugged:hover {
+.rugged:hover,
+.rugged.active {
   background-color: #115e59;
   color: #ffead0;
 }
