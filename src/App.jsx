@@ -17,6 +17,7 @@ import UsersVanDetails from "./components/Pages/Host/UsersVans/UsersVanDetails/U
 import UsersVanInfo from "./components/Pages/Host/UsersVans/UsersVanDetails/UsersVanInfo/UsersVanInfo";
 import UsersVanPricing from "./components/Pages/Host/UsersVans/UsersVanDetails/UsersVanPricing/UsersVanPricing";
 import UsersVanPhotos from "./components/Pages/Host/UsersVans/UsersVanDetails/UsersVanPhotos/UsersVanPhotos";
+import ErrorPage from "./components/Pages/ErrorPage/ErrorPage";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <div className={styles.container}>
         <Routes>
           <Route path="/" element={<Layout />}>
+            <Route path="*" element={<ErrorPage />} />
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="vans" element={<Vans />} />

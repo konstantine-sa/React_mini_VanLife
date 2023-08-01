@@ -3,7 +3,7 @@ import styles from "./Nav.module.css";
 
 export default function Nav(props) {
   return (
-    <div>
+    <div className={styles.navbarWrap}>
       <nav className={styles.navBar}>
         <NavLink
           to="/"

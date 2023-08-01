@@ -1,6 +1,11 @@
 .buttonLarge {
   width: 70%;
   height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   margin-top: 40%;
   margin-bottom: 12%;
   padding: 10px 0;
