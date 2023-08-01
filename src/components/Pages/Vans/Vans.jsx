@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Link,
-  NavLink,
-  useSearchParams,
-} from "react-router-dom";
+import { NavLink, useSearchParams } from "react-router-dom";
 import styles from "./Vans.module.css";
 import VanCard from "./VanCard/VanCard";
 import Loader from "../../Loader/Loader";
@@ -28,7 +21,13 @@ export default function Vans() {
   }, []);
 
   const vanCardsBuilder = displayedVans.map((van) => {
-    return <VanCard key={van.id} vanData={van} />;
+    return (
+      <VanCard
+        key={van.id}
+        vanData={van}
+        state={{ search: searchParams.toString() }}
+      />
+    );
   });
 
   return (

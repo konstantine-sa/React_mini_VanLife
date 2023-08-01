@@ -6,7 +6,7 @@ import VanCategoryButton from "../../../Buttons/VanCategoryButton/VanCategoryBut
 export default function VanCard(props) {
   return (
     <div className={styles.item}>
-      <Link to={props.vanData.id}>
+      <Link to={props.vanData.id} state={props.state}>
         <img className={styles.itemImage} src={props.vanData.imageUrl}></img>
         <p className={styles.itemTitle}>{props.vanData.name}</p>
         <p className={styles.itemPrice}>

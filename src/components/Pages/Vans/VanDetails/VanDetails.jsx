@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import styles from "./VanDetails.module.css";
 import VanCategoryButton from "../../../Buttons/VanCategoryButton/VanCategoryButton";
 import ButtonLarge from "../../../Buttons/ButtonLarge/ButtonLarge";
@@ -7,6 +7,7 @@ import Loader from "../../../Loader/Loader";
 
 export default function VanDetails(props) {
   const params = useParams();
+  const location = useLocation();
   const [van, setVan] = React.useState(null);
 
   React.useEffect(() => {
@@ -19,7 +20,11 @@ export default function VanDetails(props) {
     <div className={styles.container}>
       {van ? (
         <div className={styles.wrap}>
-          <Link to={".."} relative="path" className={styles.backToVans}>
+          <Link
+            to={`..?${location.state.search}`}
+            relative="path"
+            className={styles.backToVans}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="14"
@@ -32,7 +37,7 @@ export default function VanDetails(props) {
                 fill="#858585"
               />
             </svg>
-            <p>Back to all vans</p>
+            <p>Back to vans</p>
           </Link>
           <img className={styles.itemImage} src={van.imageUrl}></img>
           <VanCategoryButton category={van.type} />
