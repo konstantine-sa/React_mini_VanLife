@@ -2,14 +2,17 @@ import React from "react";
 import styles from "./UsersVans.module.css";
 import ListedVanCard from "./ListedVanCard/ListedVanCard";
 import Loader from "../../../Loader/Loader";
+import { getVansData } from "../../../../utilities/ApiGet";
 
 export default function UsersVans() {
   const [vans, setVans] = React.useState([]);
 
   React.useEffect(() => {
-    fetch("/api/host/vans")
-      .then((res) => res.json())
-      .then((data) => setVans(data.vans));
+    async function loadVans() {
+      const data = await getVansData("/api/vans/");
+      setVans(data);
+    }
+    loadVans();
   }, []);
 
   const vanCardsBuilder = vans.map((van) => {

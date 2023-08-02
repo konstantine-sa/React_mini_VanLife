@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink, useSearchParams } from "react-router-dom";
 import styles from "./Vans.module.css";
 import VanCard from "./VanCard/VanCard";
+import { getVansData } from "../../../utilities/ApiGet";
 import Loader from "../../Loader/Loader";
 
 export default function Vans() {
@@ -15,9 +16,11 @@ export default function Vans() {
     : vans;
 
   React.useEffect(() => {
-    fetch("/api/vans")
-      .then((res) => res.json())
-      .then((data) => setVans(data.vans));
+    async function loadVans() {
+      const data = await getVansData("/api/vans");
+      setVans(data);
+    }
+    loadVans();
   }, []);
 
   const vanCardsBuilder = displayedVans.map((van) => {

@@ -4,16 +4,19 @@ import styles from "./VanDetails.module.css";
 import VanCategoryButton from "../../../Buttons/VanCategoryButton/VanCategoryButton";
 import ButtonLarge from "../../../Buttons/ButtonLarge/ButtonLarge";
 import Loader from "../../../Loader/Loader";
+import { getVansData } from "../../../../utilities/ApiGet";
 
-export default function VanDetails(props) {
+export default function VanDetails() {
   const params = useParams();
   const location = useLocation();
   const [van, setVan] = React.useState(null);
 
   React.useEffect(() => {
-    fetch(`/api/vans/${params.id}`)
-      .then((res) => res.json())
-      .then((data) => setVan(data.vans));
+    async function loadVans() {
+      const data = await getVansData(`/api/vans/${params.id}`);
+      setVan(data);
+    }
+    loadVans();
   }, [params]);
 
   return (
