@@ -7,6 +7,8 @@ import Loader from "../../Loader/Loader";
 
 export default function Vans() {
   const [vans, setVans] = React.useState([]);
+  const [loading, setLoading] = React.useState(false);
+  const [error, setError] = React.useState(null);
   const [searchParams, setSearchParams] = useSearchParams([]);
 
   const typeFilter = searchParams.get("type");
@@ -17,26 +19,44 @@ export default function Vans() {
 
   React.useEffect(() => {
     async function loadVans() {
-      const data = await getVansData("/api/vans");
-      setVans(data);
+      setLoading(true);
+      try {
+        const data = await getVansData("/api/vans");
+        setVans(data);
+      } catch (err) {
+        setError(err);
+      } finally {
+        setLoading(false);
+      }
     }
+
     loadVans();
   }, []);
 
-  const vanCardsBuilder = displayedVans.map((van) => {
+  const vanCardsBuilder = displayedVans
+    ? displayedVans.map((van) => {
+        return (
+          <VanCard
+            key={van.id}
+            vanData={van}
+            state={{ search: searchParams.toString() }}
+          />
+        );
+      })
+    : null;
+
+  if (error) {
     return (
-      <VanCard
-        key={van.id}
-        vanData={van}
-        state={{ search: searchParams.toString() }}
-      />
+      <div className={styles.container}>
+        <h1>There was an error: {error.message}</h1>
+      </div>
     );
-  });
+  }
 
   return (
     <>
       <div className={styles.container}>
-        {vans.length > 0 ? (
+        {!loading ? (
           <>
             <h1 className={styles.title}>Explore our van options</h1>
 

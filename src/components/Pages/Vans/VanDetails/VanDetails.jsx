@@ -10,11 +10,14 @@ export default function VanDetails() {
   const params = useParams();
   const location = useLocation();
   const [van, setVan] = React.useState(null);
+  const [loading, setLoading] = React.useState(false);
 
   React.useEffect(() => {
     async function loadVans() {
+      setLoading(true);
       const data = await getVansData(`/api/vans/${params.id}`);
       setVan(data);
+      setLoading(false);
     }
     loadVans();
   }, [params]);
@@ -42,6 +45,7 @@ export default function VanDetails() {
             </svg>
             <p>Back to vans</p>
           </Link>
+          <div></div>
           <img className={styles.itemImage} src={van.imageUrl}></img>
           <VanCategoryButton category={van.type} />
           <p className={styles.itemTitle}>{van.name}</p>

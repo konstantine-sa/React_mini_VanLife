@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+} from "react-router-dom";
 import styles from "./App.module.css";
 import Home from "./components/Pages/Home/Home";
 import About from "./components/Pages/About/About";
@@ -19,33 +24,35 @@ import UsersVanPricing from "./components/Pages/Host/UsersVans/UsersVanDetails/U
 import UsersVanPhotos from "./components/Pages/Host/UsersVans/UsersVanDetails/UsersVanPhotos/UsersVanPhotos";
 import ErrorPage from "./components/Pages/ErrorPage/ErrorPage";
 
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Layout />}>
+      <Route path="*" element={<ErrorPage />} />
+      <Route index element={<Home />} />
+      <Route path="about" element={<About />} />
+      <Route path="vans" element={<Vans />} />
+      <Route path="vans/:id" element={<VanDetails />} />
+
+      <Route path="host" element={<HostLayout />}>
+        <Route index element={<Dashboard />} />
+        <Route path="income" element={<Income />} />
+        <Route path="vans" element={<UsersVans />} />
+        <Route path="vans/:id" element={<UsersVanDetails />}>
+          <Route index element={<UsersVanInfo />} />
+          <Route path="pricing" element={<UsersVanPricing />} />
+          <Route path="photos" element={<UsersVanPhotos />} />
+        </Route>
+        <Route path="reviews" element={<Reviews />} />
+      </Route>
+    </Route>
+  )
+);
+
 function App() {
   return (
-    <BrowserRouter>
-      <div className={styles.container}>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route path="*" element={<ErrorPage />} />
-            <Route index element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="vans" element={<Vans />} />
-            <Route path="vans/:id" element={<VanDetails />} />
-
-            <Route path="host" element={<HostLayout />}>
-              <Route index element={<Dashboard />} />
-              <Route path="income" element={<Income />} />
-              <Route path="vans" element={<UsersVans />} />
-              <Route path="vans/:id" element={<UsersVanDetails />}>
-                <Route index element={<UsersVanInfo />} />
-                <Route path="pricing" element={<UsersVanPricing />} />
-                <Route path="photos" element={<UsersVanPhotos />} />
-              </Route>
-              <Route path="reviews" element={<Reviews />} />
-            </Route>
-          </Route>
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <div className={styles.container}>
+      <RouterProvider router={router} />
+    </div>
   );
 }
 
