@@ -9,7 +9,7 @@ import styles from "./App.module.css";
 import Home from "./components/Pages/Home/Home";
 import About from "./components/Pages/About/About";
 import Footer from "./components/Footer/Footer";
-import Vans from "./components/Pages/Vans/Vans";
+import Vans, { loader as vansLoader } from "./components/Pages/Vans/Vans";
 import "./server";
 import VanDetails from "./components/Pages/Vans/VanDetails/VanDetails";
 import Layout from "./components/Layout";
@@ -23,14 +23,16 @@ import UsersVanInfo from "./components/Pages/Host/UsersVans/UsersVanDetails/User
 import UsersVanPricing from "./components/Pages/Host/UsersVans/UsersVanDetails/UsersVanPricing/UsersVanPricing";
 import UsersVanPhotos from "./components/Pages/Host/UsersVans/UsersVanDetails/UsersVanPhotos/UsersVanPhotos";
 import ErrorPage from "./components/Pages/ErrorPage/ErrorPage";
+import { loader } from "./components/Pages/Vans/Vans";
+import ErrorHandlerPage from "./utilities/ErrorHandlerPage/ErrorHandlerPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Layout />}>
+    <Route path="/" element={<Layout />} errorElement={<ErrorHandlerPage />}>
       <Route path="*" element={<ErrorPage />} />
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
-      <Route path="vans" element={<Vans />} />
+      <Route path="vans" element={<Vans />} loader={vansLoader} />
       <Route path="vans/:id" element={<VanDetails />} />
 
       <Route path="host" element={<HostLayout />}>

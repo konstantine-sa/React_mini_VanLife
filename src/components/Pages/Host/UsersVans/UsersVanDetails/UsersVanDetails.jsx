@@ -32,7 +32,7 @@ export default function UsersVanDetails() {
                   fill="#858585"
                 />
               </svg>
-              <p>Back to all vans</p>
+              <p>Back to vans</p>
             </div>
           </Link>
 
