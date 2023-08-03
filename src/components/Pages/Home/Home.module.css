@@ -11,6 +11,7 @@
     ),
     url(../../../assets/main_bckgnd_img.png),
     lightgray 0px -65.191px / 100% 178.109% no-repeat;
+  background-size: cover;
   font-family: Inter;
   text-align: center;
   color: #fff;

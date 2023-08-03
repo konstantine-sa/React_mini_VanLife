@@ -3,7 +3,6 @@ import { NavLink, useSearchParams, useLoaderData } from "react-router-dom";
 import styles from "./Vans.module.css";
 import VanCard from "./VanCard/VanCard";
 import { getVansData } from "../../../utilities/ApiGet";
-import Loader from "../../Loader/Loader";
 
 export function loader() {
   return getVansData("/api/vans");
@@ -31,6 +30,17 @@ export default function Vans() {
         );
       })
     : null;
+
+  function handleFilterChange(key, value) {
+    setSearchParams((prevParams) => {
+      if (value === null) {
+        prevParams.delete(key);
+      } else {
+        prevParams.set(key, value);
+      }
+      return prevParams;
+    });
+  }
 
   return (
     <>
@@ -67,7 +77,7 @@ export default function Vans() {
             {typeFilter ? (
               <NavLink
                 className={styles.filterClear}
-                onClick={() => setSearchParams(null)}
+                onClick={() => handleFilterChange("type", null)}
               >
                 Clear filters
               </NavLink>

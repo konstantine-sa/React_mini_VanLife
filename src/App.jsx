@@ -25,6 +25,7 @@ import UsersVanPhotos from "./components/Pages/Host/UsersVans/UsersVanDetails/Us
 import ErrorPage from "./components/Pages/ErrorPage/ErrorPage";
 import { loader } from "./components/Pages/Vans/Vans";
 import ErrorHandlerPage from "./utilities/ErrorHandlerPage/ErrorHandlerPage";
+import Login from "./components/Pages/Login/Login";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -34,6 +35,7 @@ const router = createBrowserRouter(
       <Route path="about" element={<About />} />
       <Route path="vans" element={<Vans />} loader={vansLoader} />
       <Route path="vans/:id" element={<VanDetails />} />
+      <Route path="login" element={<Login />} />
 
       <Route path="host" element={<HostLayout />}>
         <Route index element={<Dashboard />} />
@@ -52,7 +54,7 @@ const router = createBrowserRouter(
 
 function App() {
   return (
-    <div className={styles.container}>
+    <div className={styles.mainContainer}>
       <RouterProvider router={router} />
     </div>
   );

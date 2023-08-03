@@ -24,6 +24,10 @@
   color: #161616;
 }
 
+.login:hover path {
+  stroke: #161616;
+}
+
 .active {
   color: #161616;
   font-weight: bold;
