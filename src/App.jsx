@@ -26,6 +26,7 @@ import ErrorPage from "./components/Pages/ErrorPage/ErrorPage";
 import { loader } from "./components/Pages/Vans/Vans";
 import ErrorHandlerPage from "./utilities/ErrorHandlerPage/ErrorHandlerPage";
 import Login from "./components/Pages/Login/Login";
+import Rent from "./components/Pages/Rent/Rent";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -35,6 +36,7 @@ const router = createBrowserRouter(
       <Route path="about" element={<About />} />
       <Route path="vans" element={<Vans />} loader={vansLoader} />
       <Route path="vans/:id" element={<VanDetails />} />
+      <Route path="vans/rent" element={<Rent />} />
       <Route path="login" element={<Login />} />
 
       <Route path="host" element={<HostLayout />}>

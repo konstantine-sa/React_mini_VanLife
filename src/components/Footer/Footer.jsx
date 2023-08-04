@@ -7,7 +7,6 @@ export default function Footer() {
     <div>
       <footer className={styles.container}>
         <p className={styles.copyright}>&copy; 2022 #VANLIFE</p>
-        <Nav navFooter="navFooter" />
       </footer>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./About.module.css";
-import { Link } from "react-router-dom";
+import ButtonMedium from "../../Buttons/ButtonMedium/ButtonMedium";
 
 export default function About() {
   return (
@@ -8,15 +8,18 @@ export default function About() {
       <div className={styles.heroImg}></div>
       <section className={styles.container}>
         <h1 className={styles.title}>
-          Dont squeeze in a sedan when you could relax in a van.
+          Experience the bliss of traveling in a van instead of cramming into a
+          sedan.
         </h1>
         <p className={styles.description}>
-          Our mission is to enliven your road trip with the perfect travel van
-          rental. Our vans are recertified before each trip to ensure your
-          travel plans can go off without a hitch. (Hitch costs extra 😉) <br />
+          At our core, we strive to elevate your road trip experience with the
+          ideal travel van rental. Rest assured, our vans undergo thorough
+          recertification before each trip, guaranteeing a smooth journey
+          without a glitch. (Hitch costs extra 😉) <br />
           <span>
-            Our team is full of vanlife enthusiasts who know firsthand the magic
-            of touring the world on 4 wheels.
+            Our team comprises passionate vanlife enthusiasts who have
+            personally witnessed the enchantment of exploring the world on four
+            wheels.
           </span>
         </p>
         <div className={styles.calltoactionContainer}>
@@ -24,7 +27,9 @@ export default function About() {
             Your destination is waiting. <br />
             Your van is ready.
           </h3>
-          <Link className={styles.buttonMedium}>Explore our vans</Link>
+          <div className={styles.buttonMediumWrap}>
+            <ButtonMedium buttonName="Explore our vans" url="../vans/" />
+          </div>
         </div>
       </section>
     </div>

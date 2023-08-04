@@ -6,8 +6,8 @@
   min-height: 55vh;
   background: #fff7ed;
   font-family: Inter;
-  text-align: center;
   color: #161616;
+  text-align: left;
 }
 
 .heroImg {
@@ -20,6 +20,7 @@
 
 .title {
   margin-top: 50px;
+  align-self: flex-start;
   font-size: 32px;
   font-weight: 700;
   line-height: 38px;
@@ -27,14 +28,16 @@
 
 .description {
   margin-top: 30px;
+  align-self: flex-start;
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
+  text-align: left;
 }
 
 .description span {
   display: block;
-  padding: 16px;
+  margin-top: 20px;
 }
 
 .calltoactionContainer {
@@ -56,18 +59,8 @@
   line-height: 30px;
 }
 
-.buttonMedium {
-  padding: 12px 22px;
+.buttonMediumWrap {
   margin-top: 25px;
-  border: none;
-  border-radius: 10px;
-  background: #161616;
-  cursor: pointer;
-
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 24px;
 }
 
 /* =============================================MEDIA QUERY 450px */
@@ -99,5 +92,10 @@
     font-size: 18px;
     line-height: 30px;
     text-align: center;
+  }
+
+  .buttonMediumWrap a {
+    font-size: 12px;
+    padding: 1em 1.5em;
   }
 }

@@ -14,7 +14,11 @@ export default function Home() {
           perfect van to make your perfect road trip.
         </p>
         <div className={styles.buttonWrap}>
-          <ButtonLarge className={styles.button} buttonName="Find your van" />
+          <ButtonLarge
+            className={styles.button}
+            buttonName="Find your van"
+            url="/vans/"
+          />
         </div>
       </section>
     </div>

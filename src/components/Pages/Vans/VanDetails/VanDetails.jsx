@@ -55,7 +55,7 @@ export default function VanDetails() {
           </p>
           <p className={styles.description}>{van.description}</p>
           <div className={styles.buttonLargeWrap}>
-            <ButtonLarge buttonName="Rent this van" />
+            <ButtonLarge buttonName="Rent this van" url="../vans/rent" />
           </div>
         </div>
       ) : (
