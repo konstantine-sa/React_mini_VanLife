@@ -13,7 +13,9 @@ export default function Home() {
           Add adventure to your life by joining the #vanlife movement. Rent the
           perfect van to make your perfect road trip.
         </p>
-        <ButtonLarge buttonName="Find your van" />
+        <div className={styles.buttonWrap}>
+          <ButtonLarge className={styles.button} buttonName="Find your van" />
+        </div>
       </section>
     </div>
   );

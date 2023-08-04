@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink, useSearchParams, useLoaderData } from "react-router-dom";
 import styles from "./Vans.module.css";
 import VanCard from "./VanCard/VanCard";
@@ -12,6 +11,7 @@ export default function Vans() {
   const [searchParams, setSearchParams] = useSearchParams([]);
 
   const vans = useLoaderData();
+  console.log(vans);
 
   const typeFilter = searchParams.get("type");
 

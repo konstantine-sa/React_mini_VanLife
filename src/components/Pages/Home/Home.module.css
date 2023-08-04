@@ -31,6 +31,22 @@
   line-height: 24px;
 }
 
+.buttonWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 30vh;
+  width: 100%;
+  max-width: 500px;
+}
+
+.buttonWrap :first-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+}
+
 /* =============================================MEDIA QUERY 450px */
 @media only screen and (max-width: 450px) {
   .container {
@@ -40,5 +56,15 @@
 
   .title {
     font-size: 21px;
+  }
+
+  .buttonWrap {
+    margin-top: 10vh;
+  }
+
+  .buttonWrap :first-child {
+    height: 40px;
+    font-size: 14px;
+    width: 70%;
   }
 }
