@@ -1,18 +1,16 @@
 import React from "react";
-import { Link, Outlet, useParams } from "react-router-dom";
+import { Link, Outlet, useLocation, useLoaderData } from "react-router-dom";
 import styles from "./UsersVanDetails.module.css";
 import VanCategoryButton from "../../../../Buttons/VanCategoryButton/VanCategoryButton";
 import UsersVanDetailsNav from "./UsersVanDetailsNav/UsersVanDetailsNav";
+import { getUsersVans } from "../../../../../utilities/ApiGet";
+
+export function loader(params) {
+  return getUsersVans("/api/vans", params.params.id);
+}
 
 export default function UsersVanDetails() {
-  const params = useParams();
-  const [van, setVan] = React.useState([]);
-
-  React.useEffect(() => {
-    fetch(`/api/host/vans/${params.id}`)
-      .then((res) => res.json())
-      .then((data) => setVan(data.vans[0]));
-  }, [params]);
+  const van = useLoaderData();
 
   return (
     <>
