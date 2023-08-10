@@ -30,8 +30,9 @@ import UsersVanPricing from "./components/Pages/Host/UsersVans/UsersVanDetails/U
 import UsersVanPhotos from "./components/Pages/Host/UsersVans/UsersVanDetails/UsersVanPhotos/UsersVanPhotos";
 import ErrorPage from "./components/Pages/ErrorPage/ErrorPage";
 import ErrorHandlerPage from "./utilities/ErrorHandlerPage/ErrorHandlerPage";
-import Login from "./components/Pages/Login/Login";
+import Login, { loader as loginLoader } from "./components/Pages/Login/Login";
 import Rent from "./components/Pages/Rent/Rent";
+import requireAuth from "./utilities/RequireAuth";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -46,22 +47,56 @@ const router = createBrowserRouter(
         loader={VanDetailsLoader}
       />
       <Route path="vans/rent" element={<Rent />} />
-      <Route path="login" element={<Login />} />
+      <Route path="login" element={<Login />} loader={loginLoader} />
 
       <Route path="host" element={<HostLayout />}>
-        <Route index element={<Dashboard />} />
-        <Route path="income" element={<Income />} />
+        <Route
+          index
+          element={<Dashboard />}
+          loader={async () => await requireAuth()}
+        />
+        <Route
+          path="income"
+          element={<Income />}
+          loader={async () => {
+            return null;
+          }}
+        />
+        <Route
+          path="reviews"
+          element={<Reviews />}
+          loader={async () => {
+            return null;
+          }}
+        />
         <Route path="vans" element={<UsersVans />} loader={usersVansLoader} />
         <Route
           path="vans/:id"
           element={<UsersVanDetails />}
           loader={userVansDetailsLoader}
         >
-          <Route index element={<UsersVanInfo />} />
-          <Route path="pricing" element={<UsersVanPricing />} />
-          <Route path="photos" element={<UsersVanPhotos />} />
+          <Route
+            index
+            element={<UsersVanInfo />}
+            loader={async () => {
+              return null;
+            }}
+          />
+          <Route
+            path="pricing"
+            element={<UsersVanPricing />}
+            loader={async () => {
+              return null;
+            }}
+          />
+          <Route
+            path="photos"
+            element={<UsersVanPhotos />}
+            loader={async () => {
+              return null;
+            }}
+          />
         </Route>
-        <Route path="reviews" element={<Reviews />} />
       </Route>
     </Route>
   )

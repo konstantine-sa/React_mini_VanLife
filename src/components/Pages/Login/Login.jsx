@@ -1,13 +1,19 @@
 import React from "react";
 import styles from "./Login.module.css";
 import ButtonLarge from "../../Buttons/ButtonLarge/ButtonLarge";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
+
+export function loader({ request }) {
+  return new URL(request.url).searchParams.get("message");
+}
 
 export default function Login() {
   const [loginFormData, setLoginFormData] = React.useState({
     email: "",
     password: "",
   });
+
+  const message = useLoaderData();
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -24,6 +30,7 @@ export default function Login() {
 
   return (
     <div className={styles.container}>
+      {message && <h2>{message}</h2>}
       <h1 className={styles.title}>Sign in to your account</h1>
       <form onSubmit={handleSubmit} className={styles.loginForm}>
         <input
